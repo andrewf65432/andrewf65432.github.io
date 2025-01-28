@@ -26,28 +26,23 @@
     <!-- Step 2: Clarify Topic -->
     <section id="step2" class="hidden">
       <h3>Step 2: Clarify Your Topic</h3>
-      <p id="clarificationQuestion">Placeholder question from AI</p>
-      <input type="text" id="clarificationInput" placeholder="Your response...">
-      <button id="submitClarification">Submit Clarification</button>
+      <div id="clarificationQuestions"></div>
+      <button id="submitClarification">Submit Clarifications</button>
       <div id="clarificationResponse" class="response"></div>
     </section>
-
+    
     <!-- Step 3: Choose Title -->
     <section id="step3" class="hidden">
       <h3>Step 3: Choose a Title</h3>
-      <div id="titleOptions">
-        <!-- Hardcoded titles will appear here -->
-      </div>
-      <input type="text" id="customTitle" placeholder="Or enter your own title...">
+      <div id="titleOptions"></div>
+      <input type="text" id="customTitle" maxlength="${MAX_CHARS}" placeholder="Or enter your own title...">
       <button id="submitTitle">Submit Title</button>
     </section>
-
+    
     <!-- Step 4: Review Outline -->
     <section id="step4" class="hidden">
       <h3>Step 4: Review the Outline</h3>
-      <div id="outlinePreview">
-        <!-- Hardcoded outline will appear here -->
-      </div>
+      <div id="outlinePreview"></div>
       <button id="approveOutline">Approve Outline</button>
       <button id="requestOutlineChanges">Request Changes</button>
       <div id="outlineResponse" class="response"></div>
