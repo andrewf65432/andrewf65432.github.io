@@ -60,6 +60,27 @@ body {
     padding: 1rem;
   }
 
+/* Error highlighting */
+.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.response {
+  margin-top: 1rem;
+  color: #025e2f; /* Dark green */
+  font-style: italic;
+}
+
+
 .title-option {
   display: block;
   margin: 0.5rem 0;
