@@ -59,4 +59,15 @@ body {
     text-align: center;
     padding: 1rem;
   }
+
+.hidden {
+  display: none;
+}
+
+.response {
+  margin-top: 1rem;
+  color: #025e2f; /* Dark green */
+  font-style: italic;
+}
+
   
