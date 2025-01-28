@@ -1,39 +1,64 @@
-const GPT_API_URL = "https://api.openai.com/v1/engines/gpt-4o/completions"; // Placeholder
-const GPT_API_KEY = "YOUR_API_KEY_HERE"; // Replace with your key
-
-const topicInput = document.getElementById("topicInput");
-const submitTopicButton = document.getElementById("submitTopic");
-const aiResponseDiv = document.getElementById("aiResponse");
-
-submitTopicButton.addEventListener("click", async () => {
-  const topic = topicInput.value.trim();
-
+// Step 1: Enter Topic
+document.getElementById("submitTopic").addEventListener("click", () => {
+  const topic = document.getElementById("topicInput").value.trim();
   if (!topic) {
-    aiResponseDiv.innerHTML = "<p>Please enter a valid topic.</p>";
+    document.getElementById("topicResponse").textContent = "Please enter a valid topic.";
+    return;
+  }
+  
+  // Simulate AI response
+  document.getElementById("topicResponse").innerHTML = `
+    Great topic! How would you refine it further? Example clarifying question: 
+    "What specific aspect of ${topic} would you like to focus on?"
+  `;
+
+  // Uncomment when ready for API:
+  // submitTopic(topic);
+
+  // Move to Step 2
+  document.getElementById("step2").classList.remove("hidden");
+});
+
+// Step 2: Clarify Topic
+document.getElementById("submitClarification").addEventListener("click", () => {
+  const clarification = document.getElementById("clarificationInput").value.trim();
+  if (!clarification) {
+    document.getElementById("clarificationResponse").textContent = "Please provide clarification.";
     return;
   }
 
-  aiResponseDiv.innerHTML = "<p>Submitting your topic...</p>";
+  // Simulate AI response
+  document.getElementById("clarificationResponse").innerHTML = `
+    Thanks for clarifying! Based on your feedback, the topic is now refined to: 
+    "${clarification} - A deeper dive."
+  `;
 
-  try {
-    const response = await fetch(GPT_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${GPT_API_KEY}`,
-      },
-      body: JSON.stringify({
-        prompt: `The user wants to write an eBook about: ${topic}. Ask clarifying questions about the topic to refine it.`,
-        max_tokens: 150,
-      }),
-    });
+  // Uncomment when ready for API:
+  // submitClarification(clarification);
 
-    const data = await response.json();
-    const aiMessage = data.choices[0].text.trim();
+  // Move to Step 3
+  document.getElementById("step3").classList.remove("hidden");
+});
 
-    aiResponseDiv.innerHTML = `<p>${aiMessage}</p>`;
-  } catch (error) {
-    console.error(error);
-    aiResponseDiv.innerHTML = "<p>There was an error processing your request. Please try again later.</p>";
+// Step 3: Choose Title
+document.getElementById("submitTitle").addEventListener("click", () => {
+  const customTitle = document.getElementById("customTitle").value.trim();
+  if (!customTitle) {
+    document.getElementById("titleOptions").textContent = "Please choose or enter a title.";
+    return;
   }
+
+  alert(`Title selected: ${customTitle}`);
+  
+  // Uncomment when ready for API:
+  // storeTitleSelection(customTitle);
+
+  // Move to Step 4
+  document.getElementById("step4").classList.remove("hidden");
+});
+
+// Step 4: Review Outline
+document.getElementById("approveOutline").addEventListener("click", () => {
+  alert("Outline approved! Moving to ebook generation...");
+  document.getElementById("step5").classList.remove("hidden");
 });
