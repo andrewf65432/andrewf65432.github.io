@@ -60,6 +60,32 @@ body {
     padding: 1rem;
   }
 
+.title-option {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #013220;
+  color: #f5f5dc;
+  border: 1px solid #025e2f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.title-option:hover {
+  background-color: #025e2f;
+}
+
+.hidden {
+  display: none;
+}
+
+.response {
+  margin-top: 1rem;
+  color: #025e2f;
+  font-style: italic;
+}
+
+
 .hidden {
   display: none;
 }
