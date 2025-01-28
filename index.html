@@ -1,23 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px Courier; color: #eae96f; -webkit-text-stroke: #eae96f; background-color: #2e2e2e}
-    span.s1 {font-kerning: none}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook Writer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;h1&gt;Hello World&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;I'm hosted with GitHub Pages.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+  <header>
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="eBook Writer Logo" class="logo">
+      <h1>eBook Writer</h1>
+    </div>
+  </header>
+
+  <main>
+    <!-- Step 1: Enter Topic -->
+    <section id="step1">
+      <h3>Step 1: Suggest a Topic</h3>
+      <input type="text" id="topicInput" placeholder="Enter your topic here..." required>
+      <button id="submitTopic">Submit Topic</button>
+      <div id="topicResponse" class="response"></div>
+    </section>
+
+    <!-- Step 2: Clarify Topic -->
+    <section id="step2" class="hidden">
+      <h3>Step 2: Clarify Your Topic</h3>
+      <p id="clarificationQuestion">Placeholder question from AI</p>
+      <input type="text" id="clarificationInput" placeholder="Your response...">
+      <button id="submitClarification">Submit Clarification</button>
+      <div id="clarificationResponse" class="response"></div>
+    </section>
+
+    <!-- Step 3: Choose Title -->
+    <section id="step3" class="hidden">
+      <h3>Step 3: Choose a Title</h3>
+      <div id="titleOptions">
+        <!-- Hardcoded titles will appear here -->
+      </div>
+      <input type="text" id="customTitle" placeholder="Or enter your own title...">
+      <button id="submitTitle">Submit Title</button>
+    </section>
+
+    <!-- Step 4: Review Outline -->
+    <section id="step4" class="hidden">
+      <h3>Step 4: Review the Outline</h3>
+      <div id="outlinePreview">
+        <!-- Hardcoded outline will appear here -->
+      </div>
+      <button id="approveOutline">Approve Outline</button>
+      <button id="requestOutlineChanges">Request Changes</button>
+      <div id="outlineResponse" class="response"></div>
+    </section>
+
+    <!-- Placeholder for Step 5 -->
+    <section id="step5" class="hidden">
+      <h3>Step 5: Generate Your Ebook</h3>
+      <p>Ready to generate your ebook!</p>
+      <button id="generateEbook">Generate Ebook</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 eBook Writer. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
